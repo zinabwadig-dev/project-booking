@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atlas Barber · Book your visit</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="hero">
+    <p class="brand">Atlas Barber</p>
+    <h1>Book your visit</h1>
+    <p class="lead">Pick your services, see the total, and send your booking on WhatsApp.</p>
+  </header>
+
+  <main class="layout">
+
+    <!-- STEP 1: services. The cards are created by JavaScript. -->
+    <section aria-labelledby="services-title">
+      <h2 id="services-title">1. Choose your services</h2>
+      <div id="services" class="services"></div>
+    </section>
+
+    <!-- STEP 2: the form -->
+    <section aria-labelledby="form-title">
+      <h2 id="form-title">2. Your details</h2>
+
+      <form id="booking-form" novalidate>
+
+        <div class="field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" autocomplete="name">
+          <p class="error" id="name-error" aria-live="polite"></p>
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" autocomplete="email">
+          <p class="error" id="email-error" aria-live="polite"></p>
+        </div>
+
+        <div class="field">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="06 12 34 56 78">
+          <p class="error" id="phone-error" aria-live="polite"></p>
+        </div>
+
+        <div class="field">
+          <label for="quantity">How many people?</label>
+          <input type="number" id="quantity" name="quantity" min="1" max="10" value="1">
+          <p class="error" id="quantity-error" aria-live="polite"></p>
+        </div>
+
+        <div class="summary">
+          <p>Selected: <span id="selected-list">nothing yet</span></p>
+          <p class="total">Total: <span id="total">0</span> MAD</p>
+          <p class="error" id="services-error" aria-live="polite"></p>
+        </div>
+
+        <button type="submit" class="btn">Book on WhatsApp</button>
+        <button type="button" class="btn btn-light" id="clear">Clear</button>
+
+        <p class="success" id="success" role="status"></p>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>Atlas Barber · Casablanca · Open every day 10:00 to 21:00</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
